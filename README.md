@@ -29,7 +29,7 @@ cd FakeNewsDetectionWeb
 Do giới hạn dung lượng của GitHub, các file mô hình (Models) có kích thước lớn không được lưu trữ trong mã nguồn này.
 Bạn **BẮT BUỘC** phải tải các file mô hình từ Google Drive và đặt vào đúng vị trí để ứng dụng có thể hoạt động.
 
-👉 **[BẤM VÀO ĐÂY ĐỂ TẢI FOLDER MODELS TỪ GOOGLE DRIVE] (Thêm link Google Drive của bạn vào đây)**
+👉 **[BẤM VÀO ĐÂY ĐỂ TẢI FOLDER MODELS TỪ GOOGLE DRIVE](https://drive.google.com/drive/folders/1Mdcc8tJ8U1WLbLZvcCy6Y0eMfOXxrPcP?usp=sharing)**
 
 Sau khi tải về, hãy giải nén và đảm bảo cấu trúc thư mục `models/` của bạn trông giống như sau (đặt thư mục `models/` nằm cùng cấp với file `app.py`):
 ```text
