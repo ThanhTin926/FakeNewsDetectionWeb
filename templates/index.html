@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Phát hiện Tin giả</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hệ thống Phát hiện Tin giả (Fake News Detection)</h1>
+            <p>Sử dụng Machine Learning & Deep Learning để phân loại độ tin cậy của bản tin</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="model-select">Chọn mô hình dự đoán:</label>
+                    <select id="model-select">
+                        <option value="svm">Máy học truyền thống: SVM + TF-IDF</option>
+                        <option value="bilstm">Học sâu: Bi-LSTM + Word2Vec</option>
+                        <option value="bert">Mô hình ngôn ngữ lớn: BERT Fine-tuning</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="news-title">Tiêu đề bài báo:</label>
+                    <input type="text" id="news-title" placeholder="Nhập tiêu đề tin tức vào đây...">
+                </div>
+
+                <div class="form-group">
+                    <label for="news-text">Nội dung bài báo (*Bắt buộc):</label>
+                    <textarea id="news-text" rows="8" placeholder="Dán toàn bộ nội dung tin tức cần kiểm tra vào đây..."></textarea>
+                </div>
+
+                <button id="check-btn" onclick="checkNews()">Kiểm tra Tin tức</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Hệ thống đang phân tích văn bản...</p>
+            </div>
+
+            <div id="result-section" class="hidden">
+                <h2>Kết quả dự đoán: <span id="res-label"></span></h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-title">Độ tin cậy (Xác suất)</span>
+                        <span class="stat-value" id="res-prob">-</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-title">Mô hình sử dụng</span>
+                        <span class="stat-value" id="res-model">-</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-title">Thời gian xử lý</span>
+                        <span class="stat-value" id="res-time">-</span>
+                    </div>
+                </div>
+                <div class="preprocess-box">
+                    <strong>Văn bản sau tiền xử lý:</strong>
+                    <p id="res-clean-text"></p>
+                </div>
+            </div>
+
+            <div id="error-section" class="hidden">
+                <p id="error-msg"></p>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
